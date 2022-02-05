@@ -1,5 +1,7 @@
+import Container from 'components/Container';
+
 const About = function () {
-  return <h1>about</h1>;
+  return <Container>About Page</Container>;
 };
 
 export default About;

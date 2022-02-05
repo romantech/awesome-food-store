@@ -5,12 +5,8 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'next',
-    'standard',
-    'plugin:prettier/recommended',
-  ],
+  plugins: [],
+  extends: ['next', 'plugin:prettier/recommended'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -18,7 +14,6 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react'],
   settings: {
     react: {
       version: 'detect',
@@ -26,6 +21,7 @@ module.exports = {
   },
   rules: {
     'react/prop-types': 'off',
+    'prettier/prettier': 1,
   },
   globals: {
     React: true,
