@@ -1,7 +1,8 @@
 import { Modal } from 'antd';
-import Container from 'components/Container';
+import Container from '@/components/Container';
+import StoreGrid from '@/components/StoreGrid';
 
-function Store({ stores }) {
+export default function Store({ stores }) {
   const showModal = idx => {
     Modal.info({
       closable: true,
@@ -18,23 +19,23 @@ function Store({ stores }) {
 
   return (
     <Container title="Store">
-      <ul>
+      <section className="max-w-[1024px] flex flex-wrap justify-center gap-4 overflow-auto p-4">
         {stores?.map((food, idx) => (
-          <li className="w-fit" key={food.id} onClick={() => showModal(idx)}>
-            {food.name}
-          </li>
+          <StoreGrid
+            callback={() => showModal(idx)}
+            key={food.name}
+            alt={food.name}
+            src={food.image}
+          />
         ))}
-      </ul>
+      </section>
     </Container>
   );
 }
 
 // 빌드 시 데이터 GET
 export async function getStaticProps({ params }) {
-  console.log(params);
   const res = await fetch(`${process.env.HOST}/stores`);
   const stores = await res.json();
   return { props: { stores } };
 }
-
-export default Store;

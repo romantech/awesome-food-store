@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Container from 'components/Container';
+import Container from '@/components/Container';
 import { Button, Result } from 'antd';
 import { useRouter } from 'next/router';
 

@@ -1,6 +1,6 @@
 import Container from '@/components/Container';
 
-function DetailPage({ store }) {
+export default function StoreInfo({ store }) {
   return (
     <Container title={store.name}>
       <section className="flex flex-col">
@@ -36,5 +36,3 @@ export async function getStaticProps({ params: { storeId } }) {
   const store = await res.json();
   return { props: { store } };
 }
-
-export default DetailPage;

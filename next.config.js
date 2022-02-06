@@ -8,6 +8,9 @@ module.exports = withAntdLess({
   lessVarsFilePathAppendToEndOfContent: false,
   // optional https://github.com/webpack-contrib/css-loader#object
   cssLoaderOptions: {},
+  images: {
+    domains: ['s3.ap-northeast-2.amazonaws.com'],
+  },
 
   // Other Config Here...
 

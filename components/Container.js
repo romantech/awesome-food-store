@@ -2,11 +2,11 @@ import { Layout, Menu } from 'antd';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import urls from 'lib/urls';
+import urls from '@/lib/urls';
 
 const { Header, Footer, Content } = Layout;
 
-const Container = function ({ children, title }) {
+export default function Container({ children, title }) {
   const router = useRouter();
 
   return (
@@ -33,12 +33,10 @@ const Container = function ({ children, title }) {
           ))}
         </Menu>
       </Header>
-      <Content className="bg-white flex items-center justify-center">
+      <Content className="w-screen h-[calc(100vh-134px)] bg-white grid place-content-center">
         {children}
       </Content>
       <Footer>© 2022 YOHAN JANG</Footer>
     </Layout>
   );
-};
-
-export default Container;
+}

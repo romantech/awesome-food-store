@@ -1,6 +1,6 @@
-import Container from 'components/Container';
+import Container from '@/components/Container';
 
-const About = function () {
+export default function About() {
   return (
     <Container title="About">
       <section>
@@ -9,6 +9,4 @@ const About = function () {
       </section>
     </Container>
   );
-};
-
-export default About;
+}
