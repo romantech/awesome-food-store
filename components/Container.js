@@ -1,4 +1,5 @@
 import { Layout, Menu } from 'antd';
+import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -14,12 +15,15 @@ const sitemap = [
   },
 ];
 
-const Container = function ({ children }) {
+const Container = function ({ children, title }) {
   const router = useRouter();
 
   return (
     <Layout className="h-screen">
-      <Header className="flex gap-8" style={{ background: '#220C10' }}>
+      <Head>
+        <title>{`Purple-IO 사전과제 | ${title ?? 404}`}</title>
+      </Head>
+      <Header className="flex gap-8">
         <Link href={'/'}>
           <a className="text-white font-bold hover:text-white">
             AWESOME FOOD STORE
@@ -27,7 +31,6 @@ const Container = function ({ children }) {
         </Link>
         <Menu
           className="flex-auto"
-          style={{ background: '#220C10' }}
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={router.pathname}

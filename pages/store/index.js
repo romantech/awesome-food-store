@@ -17,7 +17,7 @@ function Store({ stores }) {
   };
 
   return (
-    <Container>
+    <Container title="Store">
       <ul>
         {stores?.map((food, idx) => (
           <li className="w-fit" key={food.id} onClick={() => showModal(idx)}>
