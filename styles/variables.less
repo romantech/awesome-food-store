@@ -4,12 +4,8 @@
 @primary-color: #464ea3; // change antd primary-color
 @menu-dark-item-active-bg: #f2542d;
 @layout-header-background: #28231c;
-
-.anticon.anticon-info-circle,
-.ant-modal-confirm-btns {
-  display: none;
-}
-
-.ant-modal-confirm-content {
-  margin: 0;
+.@{dialog-prefix-cls} {
+  &-content {
+    border-radius: 10px;
+  }
 }

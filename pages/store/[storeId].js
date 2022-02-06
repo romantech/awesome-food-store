@@ -1,12 +1,27 @@
 import Container from '@/components/Container';
+import { Modal } from 'antd';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import ModalContent from '@/components/ModalContent';
 
 export default function StoreInfo({ store }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.prefetch('/store'); // /store 페이지 미리 로드
+  }, [router]);
+
   return (
     <Container title={store.name}>
-      <section className="flex flex-col">
-        <h1>{store.name}</h1>
-        <p>{store.description}</p>
-      </section>
+      <Modal
+        visible={true}
+        bodyStyle={{ height: '80vh' }}
+        width="80vw"
+        footer={null}
+        onCancel={() => router.push('/store')}
+      >
+        <ModalContent store={store} />
+      </Modal>
     </Container>
   );
 }

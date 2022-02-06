@@ -2394,6 +2394,13 @@ next-plugin-antd-less@^1.8.0:
     loader-utils "^3.2.0"
     null-loader "^4.0.1"
 
+next-use-contextual-routing@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/next-use-contextual-routing/-/next-use-contextual-routing-2.1.0.tgz#99fd1224ce1ce76fcfb5565eb981cf5f5ce7cdef"
+  integrity sha512-AihZzaJqa7ljdFiJHYezlyqZaEdQOCiVKdfc9xE3Y/b4R0ppHSjaaDnCcycXjDtBwJoF1cu/qihMiyTRKo1SSg==
+  dependencies:
+    qs-stringify "^1.2.1"
+
 next@12.0.10:
   version "12.0.10"
   resolved "https://registry.yarnpkg.com/next/-/next-12.0.10.tgz#fcc4584177418bd777ce157f3165b7ba5e7708f7"
@@ -2787,6 +2794,11 @@ pupa@^2.1.1:
   integrity sha512-l1jNAspIBSFqbT+y+5FosojNpVpF94nlI+wDUpqP9enwOTfHx9f0gh5nB96vl+6yTpsJsypeNrwfzPrKuHB41A==
   dependencies:
     escape-goat "^2.0.0"
+
+qs-stringify@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/qs-stringify/-/qs-stringify-1.2.1.tgz#9b39ef6b816bd83309628fc9dad435fc0eccc28b"
+  integrity sha512-2N5xGLGZUxpgAYq1fD1LmBSCbxQVsXYt5JU0nU3FuPWO8PlCnKNFQwXkZgyB6mrTdg7IbexX4wxIR403dJw9pw==
 
 qs@6.9.6:
   version "6.9.6"

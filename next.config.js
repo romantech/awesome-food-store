@@ -1,7 +1,6 @@
 const withAntdLess = require('next-plugin-antd-less');
 
 module.exports = withAntdLess({
-  reactStrictMode: true,
   // Or better still you can specify a path to a file
   lessVarsFilePath: './styles/variables.less',
   // optional

@@ -1,33 +1,41 @@
-import { Modal } from 'antd';
 import Container from '@/components/Container';
 import StoreGrid from '@/components/StoreGrid';
+import { useRouter } from 'next/router';
+import { useContextualRouting } from 'next-use-contextual-routing';
+import { Modal } from 'antd';
+import ModalContent from '@/components/ModalContent';
 
 export default function Store({ stores }) {
-  const showModal = idx => {
-    Modal.info({
-      closable: true,
-      maskClosable: true,
-      title: 'This is a notification message',
-      content: (
-        <div>
-          <p>{stores[idx].name}</p>
-          <p>some messages...some messages...</p>
-        </div>
-      ),
-    });
-  };
+  const router = useRouter();
+  const { storeIdx } = router.query;
+  const { makeContextualHref, returnHref } = useContextualRouting();
 
   return (
     <Container title="Store">
       <section className="max-w-[1024px] flex flex-wrap justify-center gap-4 overflow-auto p-4">
-        {stores?.map((food, idx) => (
+        {stores.map((store, idx) => (
           <StoreGrid
-            callback={() => showModal(idx)}
-            key={food.name}
-            alt={food.name}
-            src={food.image}
+            callback={() => {
+              router.push(
+                makeContextualHref({ storeIdx: idx }),
+                `/store/${store.id}`,
+                { shallow: true },
+              );
+            }}
+            key={store.name}
+            alt={store.name}
+            src={store.image}
           />
         ))}
+        <Modal
+          visible={!!router.query.storeIdx}
+          bodyStyle={{ height: '80vh' }}
+          width="80vw"
+          footer={null}
+          onCancel={() => router.push(returnHref)}
+        >
+          <ModalContent store={stores[storeIdx]} />
+        </Modal>
       </section>
     </Container>
   );
