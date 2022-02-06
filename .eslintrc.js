@@ -23,6 +23,7 @@ module.exports = {
   rules: {
     'react/prop-types': 'off',
     'prettier/prettier': 1,
+    'no-unused-vars': 1,
   },
   globals: {
     React: true,

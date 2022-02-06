@@ -2,18 +2,9 @@ import { Layout, Menu } from 'antd';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import urls from 'lib/urls';
 
 const { Header, Footer, Content } = Layout;
-const sitemap = [
-  {
-    name: 'Store',
-    path: '/store',
-  },
-  {
-    name: 'About',
-    path: '/about',
-  },
-];
 
 const Container = function ({ children, title }) {
   const router = useRouter();
@@ -23,9 +14,9 @@ const Container = function ({ children, title }) {
       <Head>
         <title>{`Purple-IO 사전과제 | ${title ?? 404}`}</title>
       </Head>
-      <Header className="flex gap-8">
+      <Header className="flex gap-8 items-center">
         <Link href={'/'}>
-          <a className="text-white font-bold hover:text-white">
+          <a className="text-lg text-white font-bold hover:text-white">
             AWESOME FOOD STORE
           </a>
         </Link>
@@ -35,7 +26,7 @@ const Container = function ({ children, title }) {
           mode="horizontal"
           defaultSelectedKeys={router.pathname}
         >
-          {sitemap.map(({ name, path }) => (
+          {urls.map(({ name, path }) => (
             <Menu.Item key={path} onClick={() => router.push(path)}>
               {name}
             </Menu.Item>
@@ -45,7 +36,7 @@ const Container = function ({ children, title }) {
       <Content className="bg-white flex items-center justify-center">
         {children}
       </Content>
-      <Footer>© 2022 Yohan Jang</Footer>
+      <Footer>© 2022 YOHAN JANG</Footer>
     </Layout>
   );
 };

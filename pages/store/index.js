@@ -30,7 +30,8 @@ function Store({ stores }) {
 }
 
 // 빌드 시 데이터 GET
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
+  console.log(params);
   const res = await fetch(`${process.env.HOST}/stores`);
   const stores = await res.json();
   return { props: { stores } };
