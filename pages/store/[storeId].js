@@ -1,11 +1,15 @@
-import Container from '@/components/Container';
 import { Modal } from 'antd';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import ModalContent from '@/components/ModalContent';
+import Container from '@/components/Container';
+import { useEffect } from 'react';
+import { useMounted } from '@/hooks/useMount';
 
 export default function StoreInfo({ store }) {
   const router = useRouter();
+  const isMounted = useMounted();
+  // Expected server HTML to contain a matching <div> 오류 대응
+  // reference : https://github.com/vercel/next.js/discussions/15021
 
   useEffect(() => {
     router.prefetch('/store'); // /store 페이지 미리 로드
@@ -13,15 +17,17 @@ export default function StoreInfo({ store }) {
 
   return (
     <Container title={store.name}>
-      <Modal
-        visible={true}
-        bodyStyle={{ height: '80vh' }}
-        width="80vw"
-        footer={null}
-        onCancel={() => router.push('/store')}
-      >
-        <ModalContent store={store} />
-      </Modal>
+      {isMounted && (
+        <Modal
+          visible={true}
+          bodyStyle={{ height: '80vh' }}
+          width="80vw"
+          footer={null}
+          onCancel={() => router.push('/store')}
+        >
+          <ModalContent store={store} />
+        </Modal>
+      )}
     </Container>
   );
 }

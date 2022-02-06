@@ -12,7 +12,7 @@ export default function Container({ children, title }) {
   return (
     <Layout className="h-screen">
       <Head>
-        <title>{`Purple-IO 사전과제 | ${title ?? 404}`}</title>
+        <title>{`Awesome Food Store | ${title ?? 404}`}</title>
       </Head>
       <Header className="flex gap-8 items-center">
         <Link href={'/'}>
@@ -36,7 +36,7 @@ export default function Container({ children, title }) {
       <Content className="w-screen h-[calc(100vh-134px)] bg-white grid place-content-center">
         {children}
       </Content>
-      <Footer>© 2022 YOHAN JANG</Footer>
+      <Footer>© 2022 COLORFILTER</Footer>
     </Layout>
   );
 }

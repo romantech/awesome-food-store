@@ -1,5 +1,5 @@
 {
-  "name": "assignment-purple-io",
+  "name": "awesome-food-store",
   "private": true,
   "scripts": {
     "dev": "next dev",
