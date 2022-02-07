@@ -1,6 +1,9 @@
 import { Head, Html, Main, NextScript } from 'next/document';
 
-// meta 태그 등을 정의하는 컴포넌트. 전체 페이지에 적용됨
+// _document.js 역할 : HTMl 문서 전체 설정(meta 태그 등) / 전체 페이지에 적용됨
+// _document.js 에선 리액트 Lifecycle Hook, Data Fetching 사용 불가
+// _document.js 의 콘솔은 서버에서만 볼 수 있음
+
 export default function Document() {
   return (
     <Html>

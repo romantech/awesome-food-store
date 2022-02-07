@@ -6,7 +6,7 @@ export default function ModalContent({ store }) {
   const splitDesc = description.split(/(\n)/g);
   const category = splitDesc.shift().trim();
   const lastOrder = splitDesc.pop().trim();
-  const desc = splitDesc.slice(3);
+  const modifiedDesc = splitDesc.slice(3);
   const iconStyle = { position: 'relative', top: '-4px' };
 
   return (
@@ -29,7 +29,7 @@ export default function ModalContent({ store }) {
           </h1>
         </header>
         <article className="flex flex-col text-base 2xl:text-lg h-[77%] justify-start">
-          <section className="whitespace-pre-line grow">{desc}</section>
+          <section className="whitespace-pre-line grow">{modifiedDesc}</section>
           <section>
             <div className="border-t border-b py-2">
               <ClockCircleOutlined style={iconStyle} />

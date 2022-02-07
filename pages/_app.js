@@ -1,12 +1,18 @@
 import 'styles/globals.css';
-// import 'antd/dist/antd.css';
-require('styles/variables.less');
+import Container from '@/components/Container';
 
+require('styles/variables.less'); // import 구문 쓰면 로딩 시 적용안됨
+
+// _app.js 역할 : root 컴포넌트(body)
 // Component 프롭스 : 요청한 페이지 ex) '/' GET 요청 -> /pages/index.js
 // pageProps 프롭스 : getInitialProps를 통해 받은 props
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <Container>
+      <Component {...pageProps} />
+    </Container>
+  );
 }
 
 export default MyApp;

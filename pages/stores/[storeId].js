@@ -1,9 +1,9 @@
 import { Modal } from 'antd';
 import { useRouter } from 'next/router';
 import ModalContent from '@/components/ModalContent';
-import Container from '@/components/Container';
 import { useEffect } from 'react';
 import { useMounted } from '@/hooks/useMount';
+import Head from 'next/head';
 
 export default function StoreInfo({ store }) {
   const router = useRouter();
@@ -12,23 +12,27 @@ export default function StoreInfo({ store }) {
   // reference : https://github.com/vercel/next.js/discussions/15021
 
   useEffect(() => {
-    router.prefetch('/store'); // /store 페이지 미리 로드
-  }, [router]);
+    router.prefetch('/stores'); // /stores 페이지 미리 로드
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <Container title={store.name}>
+    <>
+      <Head>
+        <title>{`AFS | ${store.name.toUpperCase()}`}</title>
+      </Head>
       {isMounted && (
         <Modal
           visible={true}
           bodyStyle={{ height: '80vh' }}
           width="80vw"
           footer={null}
-          onCancel={() => router.push('/store')}
+          onCancel={() => router.push('/stores')}
         >
           <ModalContent store={store} />
         </Modal>
       )}
-    </Container>
+    </>
   );
 }
 
@@ -38,7 +42,7 @@ export async function getStaticPaths() {
   const res = await fetch(`${process.env.HOST}/stores`);
   const stores = await res.json();
   const storePaths = stores.map(({ id }) => ({
-    params: { storeId: String(id) },
+    params: { storeId: String(id), asPath: '/stores' },
   }));
 
   return {

@@ -1,18 +1,23 @@
 import { Layout, Menu } from 'antd';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { withRouter } from 'next/router';
 import urls from '@/lib/urls';
 
 const { Header, Footer, Content } = Layout;
 
-export default function Container({ children, title }) {
-  const router = useRouter();
+function Container({ router, children }) {
+  const selectedKeys = router.pathname.split('/')[1];
+  const title = urls.reduce(
+    (title, url) =>
+      url.name.toLowerCase() === selectedKeys.toLowerCase() ? url.name : title,
+    '',
+  );
 
   return (
     <Layout className="h-screen">
       <Head>
-        <title>{`Awesome Food Store | ${title ?? 404}`}</title>
+        <title>{`AFS | ${title || 'Oops'}`}</title>
       </Head>
       <Header className="flex gap-8 items-center">
         <Link href={'/'}>
@@ -24,10 +29,13 @@ export default function Container({ children, title }) {
           className="flex-auto"
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={router.pathname}
+          defaultSelectedKeys={selectedKeys}
         >
           {urls.map(({ name, path }) => (
-            <Menu.Item key={path} onClick={() => router.push(path)}>
+            <Menu.Item
+              key={name.toLowerCase()}
+              onClick={() => router.push(path)}
+            >
               {name}
             </Menu.Item>
           ))}
@@ -40,3 +48,5 @@ export default function Container({ children, title }) {
     </Layout>
   );
 }
+
+export default withRouter(Container);
