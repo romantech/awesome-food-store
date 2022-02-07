@@ -18,7 +18,7 @@ export default function ModalContent({ store }) {
           layout="fill"
         />
       </section>
-      <section className="w-[50%] h-full overflow-auto">
+      <section className="w-[50%] h-full overflow-auto pr-4">
         <header className="h-[20%] mb-4">
           <span className="font-medium inline-block pb-1 mb-4 border-b-4 border-black">
             {category}

@@ -19,7 +19,7 @@ export default function Store({ stores }) {
               router.push(
                 makeContextualHref({ storeIdx: idx }),
                 `/store/${store.id}`,
-                { shallow: true },
+                { shallow: true }, // shallow routing(데이터 fetching 없이 URL 변경)
               );
             }}
             key={store.name}
