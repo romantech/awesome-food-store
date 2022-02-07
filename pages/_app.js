@@ -3,9 +3,9 @@ import Container from '@/components/Container';
 
 require('styles/variables.less'); // import 구문 쓰면 로딩 시 적용안됨
 
-// _app.js 역할 : root 컴포넌트(body)
+// _app.js 역할 : root 컴포넌트(body). 공통 레이아웃 등 적용
 // Component 프롭스 : 요청한 페이지 ex) '/' GET 요청 -> /pages/index.js
-// pageProps 프롭스 : getInitialProps를 통해 받은 props
+// pageProps 프롭스 : getInitialProps 를 통해 받은 props
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -7,7 +7,7 @@ export default function Custom404() {
   const router = useRouter();
 
   useEffect(() => {
-    const timer = setInterval(() => setSeconds(prev => prev - 1), 1000);
+    const timer = setInterval(() => setSeconds(sec => sec - 1), 1000);
     return () => clearInterval(timer);
   }, []);
 
