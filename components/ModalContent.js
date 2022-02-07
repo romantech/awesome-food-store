@@ -19,22 +19,24 @@ export default function ModalContent({ store }) {
           layout="fill"
         />
       </section>
-      <section className="relative w-full lg:w-[50%] h-full overflow-auto pr-4">
-        <header className="lg:mb-4">
-          <span className="font-medium inline-block pb-1 mb-4 border-b-4 border-black">
+      <section className="w-full lg:w-[50%] h-full overflow-auto pr-4">
+        <header className="mb-6 lg:mb-4 lg:h-[20%]">
+          <span className="font-bold inline-block pb-1 mb-4 border-b-4 border-black">
             {category}
           </span>
-          <h1 className="text-3xl lg:text-5xl uppercase">{name}</h1>
+          <h1 className="text-2xl lg:text-3xl 2xl:text-5xl uppercase">
+            {name}
+          </h1>
         </header>
-        <article className="flex flex-col text-base lg:text-lg">
+        <article className="flex flex-col text-base 2xl:text-lg h-[77%] justify-start">
           <section className="whitespace-pre-line grow">{desc}</section>
-          <section className="lg:absolute lg:bottom-0 lg:w-full">
-            <div className="border-t border-b pt-2 pb-2">
+          <section>
+            <div className="border-t border-b py-2">
               <ClockCircleOutlined style={iconStyle} />
               <span className="ml-2">{lastOrder}</span>
             </div>
             {url && (
-              <div className="border-b pt-2 pb-2">
+              <div className="border-b py-2">
                 <HomeOutlined style={iconStyle} />
                 <a className="ml-2" href={url} target="_blank" rel="noreferrer">
                   {url}
