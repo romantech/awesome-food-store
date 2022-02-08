@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import className from 'classnames';
+import classnames from 'classnames';
 
 /*
  * Next.js에서 제공하는 이미지 최적화 컴포넌트
@@ -21,12 +21,12 @@ export default function FillLayoutImage({
   // 외부 이미지를 불러오려면 loader 속성을 사용하거나 next.config.js에 호스트 추가
   // reference: https://nextjs.org/docs/basic-features/image-optimization
 
-  const wrapperClasses = className(
+  const wrapperClasses = classnames(
     'relative bg-gray-200',
     classNames,
     roundLevel,
   );
-  const imageClasses = className('object-cover', roundLevel);
+  const imageClasses = classnames('object-cover', roundLevel);
 
   return (
     <div className={wrapperClasses}>

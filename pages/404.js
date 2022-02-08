@@ -12,7 +12,7 @@ export default function Custom404() {
   }, []);
 
   useEffect(() => {
-    if (seconds === 0) router.replace('/about');
+    if (seconds === 0) router.replace('/about'); // 홈 컴포넌트 작성안해서 /about 으로 이동
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seconds]);
 
@@ -22,6 +22,7 @@ export default function Custom404() {
       title="페이지를 찾을 수 없어요!"
       subTitle={`${seconds}초 뒤 홈 화면으로 이동합니다`}
       extra={
+        // 홈 컴포넌트 작성안해서 /about 으로 이동
         <Button type="primary" onClick={() => router.replace('/about')}>
           Back Home
         </Button>
