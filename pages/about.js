@@ -2,14 +2,14 @@ export default function About() {
   return (
     <section className="text-primary-bg-footer overflow-y-auto px-6 py-12">
       <h1 className="text-primary-bg-footer text-4xl font-extrabold">
-        Next.js 미니 프로젝트
+        <span className="bg-primary-red text-white">Next.js</span> 미니 프로젝트
       </h1>
       <h2 className="text-primary-bg-footer text-xl font-bold mb-12">
         Next.js를 이용해 정적 생성 페이지를 구현한 맛집 사이트입니다
       </h2>
       <section className="flex flex-col lg:flex-row gap-8 lg:gap-16 text-base">
         <div>
-          <h3 className="text-primary-bg-footer text-lg font-semibold">
+          <h3 className="text-primary-bg-footer text-lg font-semibold border-primary-red border-b-4 py-2 px-1 w-fit">
             구현 내역
           </h3>
           <ul className="list-disc ml-4">
@@ -26,7 +26,7 @@ export default function About() {
           </ul>
         </div>
         <div>
-          <h3 className="text-primary-bg-footer text-lg font-semibold">
+          <h3 className="text-primary-bg-footer text-lg font-semibold border-primary-red border-b-4 py-2 px-1 w-fit">
             사용 패키지
           </h3>
           <ul className="list-disc ml-4">

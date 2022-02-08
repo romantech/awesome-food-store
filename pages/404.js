@@ -3,7 +3,7 @@ import { Button, Result } from 'antd';
 import { useRouter } from 'next/router';
 
 export default function Custom404() {
-  const [seconds, setSeconds] = useState(5);
+  const [seconds, setSeconds] = useState(100);
   const router = useRouter();
 
   useEffect(() => {
