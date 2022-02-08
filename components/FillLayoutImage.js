@@ -22,7 +22,7 @@ export default function FillLayoutImage({
   // reference: https://nextjs.org/docs/basic-features/image-optimization
 
   const wrapperClasses = classnames(
-    'relative bg-gray-200',
+    'relative bg-[#eae1df59]',
     classNames,
     roundLevel,
   );

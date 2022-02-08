@@ -1,11 +1,18 @@
+import useTypeWriter from '@/hooks/useTypeWriter';
+
 export default function About() {
+  const typingText = useTypeWriter({
+    content: 'Next.js를 이용해 정적 생성 페이지를 구현한 맛집 사이트입니다',
+  });
+
   return (
     <section className="text-primary-bg-footer overflow-y-auto px-6 py-12">
       <h1 className="text-primary-bg-footer text-4xl font-extrabold">
         <span className="bg-primary-red text-white">Next.js</span> 미니 프로젝트
       </h1>
-      <h2 className="text-primary-bg-footer text-xl font-bold mb-12">
-        Next.js를 이용해 정적 생성 페이지를 구현한 맛집 사이트입니다
+      <h2 className="text-primary-bg-footer text-xl font-bold mb-12 h-7">
+        {typingText}
+        <span className="blink" />
       </h2>
       <section className="flex flex-col lg:flex-row gap-8 lg:gap-16 text-base">
         <div>

@@ -19,3 +19,20 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #bbbbbb;
 }
+
+.blink::after {
+  content: '|';
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
