@@ -1,7 +1,7 @@
 import { Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
 
-// useLayoutEffect does nothing on the server 오류 해결
+// (Ant Design) useLayoutEffect does nothing on the server 오류 해결
 // SSR 일 때 useLayoutEffect 대신 useEffect 사용
 // reference: https://stackoverflow.com/questions/58070996
 if (typeof document === 'undefined') {
@@ -22,7 +22,7 @@ export default function Document() {
         <meta property="og:description" content="Awesome Food Store" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <body>
+      <body className="font-sans">
         <Main />
         <NextScript />
       </body>

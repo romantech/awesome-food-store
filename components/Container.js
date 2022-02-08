@@ -21,7 +21,7 @@ function Container({ router, children }) {
       </Head>
       <Header className="flex gap-8 items-center">
         <Link href={'/'}>
-          <a className="text-lg text-white font-bold hover:text-white text-ellipsis overflow-hidden whitespace-nowrap">
+          <a className="font-heading text-lg text-white font-bold hover:text-white text-ellipsis overflow-hidden whitespace-nowrap">
             AWESOME FOOD STORE
           </a>
         </Link>

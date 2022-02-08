@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+// reference : https://medium.com/codex/a-nice-typing-animation-with-react-js-6cda948af10f
 import { useEffect, useState } from 'react';
 
 export default function useTypeWriter({ content, sec = 100 }) {
