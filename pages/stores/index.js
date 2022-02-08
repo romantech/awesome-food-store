@@ -49,6 +49,23 @@ export default function Stores({ stores }) {
 // 빌드 시 데이터 GET
 export async function getStaticProps({ params }) {
   const res = await fetch(`${process.env.HOST}/stores`);
+
+  if (res.status !== 200) {
+    return {
+      redirect: {
+        destination: '/about', // data fetch 실패하면 리다이렉트
+      },
+    };
+  }
+
   const stores = await res.json();
-  return { props: { stores } };
+  if (stores.length === 0) {
+    return {
+      notFound: true, // 데이터 없으면 404 페이지 표시
+    };
+  }
+  return { props: { stores }, revalidate: 60 };
+  // revalidate 옵션으로 re-generate 페이지 타임아웃(초) 설정 가능 (production 에서만 가능)
+  // 타임아웃(초) 후에 요청 받으면 새로운 데이터로 페이지 re-generate
+  // reference: https://reactions-demo.vercel.app/
 }

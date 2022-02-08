@@ -37,7 +37,8 @@ export default function StoreInfo({ store }) {
 }
 
 // 동적 경로를 사용하는 페이지에 사용(페이지가 경로가 외부 데이터에 의존하는 경우)
-// 빌드 타임 때 정적으로 렌더링할 경로 설정
+// Next.js는 몇개의 페이지를 생성해야 하는지, 어떤 페이지 id가 유효한지 알 수 없음
+// 따라서 getStaticPaths 를 통해 빌드 타임 때 정적으로 렌더링할 경로를 설정해줘야 함
 export async function getStaticPaths() {
   const res = await fetch(`${process.env.HOST}/stores`);
   const stores = await res.json();
@@ -52,12 +53,27 @@ export async function getStaticPaths() {
 }
 
 // 빌드 타임 때 데이터 GET - SG(Static Generation) 방식
-// 한번 빌드되면 데이터는 CDN 에 저장되며, 페이지를 다시 요청하면 데이터 재사용
+// 한번 빌드되면 데이터는 CDN 에 저장되며, 페이지 요청을 다시 받아도 데이터 재사용
 // 마케팅 / 블로그 페이지 등 데이터가 자주 바뀌지 않는 페이지에 적절
 // 반면 getServerSideProps(SSR) 는 페이지를 요청할 때마다 데이터 GET
 // reference via https://nextjs.org/learn/basics/data-fetching/two-forms
 export async function getStaticProps({ params: { storeId } }) {
   const res = await fetch(`${process.env.HOST}/stores/${storeId}`);
+
+  if (res.status !== 200) {
+    return {
+      redirect: {
+        destination: '/about', // data fetch 실패하면 리다이렉트
+      },
+    };
+  }
+
   const store = await res.json();
+
+  if (!store) {
+    return {
+      notFound: true, // 데이터 없으면 404 페이지 표시
+    };
+  }
   return { props: { store } };
 }
