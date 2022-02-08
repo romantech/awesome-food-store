@@ -26,6 +26,7 @@ export default function StoreInfo({ store }) {
           visible={true}
           bodyStyle={{ height: '80vh' }}
           width="80vw"
+          style={{ top: '9.5vh' }}
           footer={null}
           onCancel={() => router.push('/stores')}
         >

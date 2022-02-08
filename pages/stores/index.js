@@ -12,7 +12,7 @@ export default function Stores({ stores }) {
   const title = stores[storeIdx]?.name.toUpperCase() || 'Stores';
 
   return (
-    <section className="max-w-[1024px] flex flex-wrap justify-center gap-4 overflow-auto px-4 py-16 lg:py-4">
+    <section className="xl:max-w-[1024px] px-4 md:px-6 py-12 flex flex-wrap justify-center gap-4 overflow-y-auto">
       <Head>
         <title>{`AFS | ${title}`}</title>
       </Head>

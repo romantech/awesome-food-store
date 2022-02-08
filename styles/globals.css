@@ -8,7 +8,7 @@
 }
 /* Track */
 ::-webkit-scrollbar-track {
-  margin: 10px;
+  margin: 2px;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {

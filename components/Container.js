@@ -21,7 +21,7 @@ function Container({ router, children }) {
       </Head>
       <Header className="flex gap-8 items-center">
         <Link href={'/'}>
-          <a className="text-lg text-white font-bold hover:text-white">
+          <a className="text-lg text-white font-bold hover:text-white text-ellipsis overflow-hidden whitespace-nowrap">
             AWESOME FOOD STORE
           </a>
         </Link>
@@ -41,7 +41,7 @@ function Container({ router, children }) {
           ))}
         </Menu>
       </Header>
-      <Content className="bg-primary-bg w-screen h-[calc(100vh-134px)] grid place-content-center">
+      <Content className="overflow-y-auto bg-primary-bg w-screen h-[calc(100vh-134px)] grid place-content-center">
         {children}
       </Content>
       <Footer>© 2022 COLORFILTER</Footer>
