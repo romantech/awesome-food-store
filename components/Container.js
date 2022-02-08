@@ -1,4 +1,5 @@
 import { Layout, Menu } from 'antd';
+import { GithubOutlined } from '@ant-design/icons';
 import Head from 'next/head';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
@@ -44,7 +45,15 @@ function Container({ router, children }) {
       <Content className="overflow-y-auto bg-primary-bg w-screen h-[calc(100vh-134px)] grid place-content-center">
         {children}
       </Content>
-      <Footer>© 2022 COLORFILTER</Footer>
+      <Footer className="flex items-center gap-4">
+        © 2022 COLORFILTER{' '}
+        <GithubOutlined
+          className="text-lg"
+          onClick={() =>
+            window.open('https://github.com/romantech/awesome-food-store')
+          }
+        />
+      </Footer>
     </Layout>
   );
 }
