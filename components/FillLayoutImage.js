@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import className from 'classnames';
 
 /*
  * Next.js에서 제공하는 이미지 최적화 컴포넌트
@@ -9,16 +10,32 @@ import Image from 'next/image';
  * static import 이미지 혹은 외부 이미지는 blurDataURL를 제공하면
  * placeholder="blur" 속성으로 로딩시 블러 효과 가능
  * */
-export default function StoreGrid({ alt, src, callback }) {
+export default function FillLayoutImage({
+  classNames,
+  roundLevel = '',
+  priority = false,
+  alt,
+  src,
+  callback,
+}) {
   // 외부 이미지를 불러오려면 loader 속성을 사용하거나 next.config.js에 호스트 추가
   // reference: https://nextjs.org/docs/basic-features/image-optimization
+
+  const wrapperClasses = className(
+    'relative bg-gray-200',
+    classNames,
+    roundLevel,
+  );
+  const imageClasses = className('object-cover', roundLevel);
+
   return (
-    <div className="w-44 h-44 lg:w-56 lg:h-56 relative bg-gray-200">
+    <div className={wrapperClasses}>
       <Image
-        className="rounded-md cursor-pointer"
+        className={imageClasses}
         src={src}
         alt={alt}
         onClick={callback}
+        priority={priority} // true면 preload 활성화 / Lazy Load 비활성
         layout="fill"
       />
     </div>

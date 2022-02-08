@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { ClockCircleOutlined, HomeOutlined } from '@ant-design/icons';
+import FillLayoutImage from '@/components/FillLayoutImage';
 
 export default function ModalContent({ store }) {
   const { name, description, url, image } = store;
@@ -11,14 +11,12 @@ export default function ModalContent({ store }) {
 
   return (
     <div className="p-8 flex flex-col lg:flex-row h-full w-full justify-evenly gap-10">
-      <section className="relative h-full w-full lg:w-[45%] bg-gray-200">
-        <Image
-          className="object-cover max-h-28"
-          src={image}
-          alt="food-background"
-          layout="fill"
-        />
-      </section>
+      <FillLayoutImage
+        classNames="h-full w-full lg:w-[45%]"
+        priority={true}
+        src={image}
+        alt={name}
+      />
       <section className="w-full lg:w-[50%] h-full overflow-auto pr-4">
         <header className="mb-6 lg:mb-4 lg:h-[20%]">
           <span className="font-bold inline-block pb-1 mb-4 border-b-4 border-black">

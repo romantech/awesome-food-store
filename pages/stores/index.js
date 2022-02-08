@@ -1,4 +1,4 @@
-import StoreGrid from '@/components/StoreGrid';
+import FillLayoutImage from '@/components/FillLayoutImage';
 import { useRouter } from 'next/router';
 import { useContextualRouting } from 'next-use-contextual-routing';
 import { Modal } from 'antd';
@@ -17,7 +17,7 @@ export default function Stores({ stores }) {
         <title>{`AFS | ${title}`}</title>
       </Head>
       {stores.map((store, idx) => (
-        <StoreGrid
+        <FillLayoutImage
           callback={() => {
             router.push(
               makeContextualHref({ storeIdx: idx }),
@@ -25,6 +25,9 @@ export default function Stores({ stores }) {
               { shallow: true }, // shallow routing(데이터 fetching 없이 URL 변경)
             );
           }}
+          classNames={'w-44 h-44 lg:w-56 lg:h-56 cursor-pointer'}
+          roundLevel={'rounded-md'}
+          priority={true}
           key={store.name}
           alt={store.name}
           src={store.image}
