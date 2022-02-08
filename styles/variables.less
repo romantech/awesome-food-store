@@ -1,11 +1,26 @@
 @import '~antd/lib/style/themes/default.less';
 @import '~antd/dist/antd.less'; // Import Ant Design styles
 
-@primary-color: #464ea3; // change antd primary-color
-@menu-dark-item-active-bg: #f2542d;
-@layout-header-background: #28231c;
+// antd primary-color
+@primary-blue: #464ea3;
+@primary-red: #f2542d;
+@primary-bg: #28231c;
+@primary-bg-footer: #eae1df;
+
+@primary-color: @primary-red;
+@menu-dark-item-active-bg: @primary-red;
+@layout-footer-background: @primary-bg-footer;
+@layout-header-background: @primary-bg;
+@link-color: @primary-blue;
+
 .@{dialog-prefix-cls} {
   &-content {
     border-radius: 10px;
+  }
+}
+
+.@{layout-prefix-cls} {
+  &-footer {
+    color: @primary-bg;
   }
 }

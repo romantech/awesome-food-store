@@ -29,7 +29,7 @@ function Container({ router, children }) {
           className="flex-auto"
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={selectedKeys}
+          selectedKeys={selectedKeys}
         >
           {urls.map(({ name, path }) => (
             <Menu.Item
@@ -41,7 +41,7 @@ function Container({ router, children }) {
           ))}
         </Menu>
       </Header>
-      <Content className="w-screen h-[calc(100vh-134px)] bg-white grid place-content-center">
+      <Content className="bg-primary-bg w-screen h-[calc(100vh-134px)] grid place-content-center">
         {children}
       </Content>
       <Footer>© 2022 COLORFILTER</Footer>
