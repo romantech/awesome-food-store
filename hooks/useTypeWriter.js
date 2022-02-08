@@ -16,6 +16,7 @@ export default function useTypeWriter({ content, sec = 100 }) {
         return index + 1;
       });
     }, sec);
+    return () => clearInterval(animKey);
   }, []);
 
   useEffect(() => {
