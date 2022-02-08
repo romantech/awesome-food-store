@@ -12,7 +12,7 @@ export default function Stores({ stores }) {
   const title = stores[storeIdx]?.name.toUpperCase() || 'Stores';
 
   return (
-    <section className="max-w-[1024px] flex flex-wrap justify-center gap-4 overflow-auto p-4">
+    <section className="max-w-[1024px] flex flex-wrap justify-center gap-4 overflow-auto px-4 py-16 lg:py-4">
       <Head>
         <title>{`AFS | ${title}`}</title>
       </Head>
@@ -37,6 +37,7 @@ export default function Stores({ stores }) {
         visible={!!router.query.storeIdx}
         bodyStyle={{ height: '80vh' }}
         width="80vw"
+        style={{ top: '9.5vh' }}
         footer={null}
         onCancel={() => router.push(returnHref)}
       >
