@@ -16,7 +16,10 @@ export default function ModalContent({ store }) {
         src={image}
         alt={name}
       />
-      <section className="w-full lg:w-[50%] h-full overflow-auto pr-4">
+      <section
+        style={{ WebkitOverflowScrolling: 'touch' }}
+        className="w-full lg:w-[50%] h-full overflow-y-auto pr-4"
+      >
         <header className="font-heading  mb-6 lg:mb-4 lg:h-[19.5%]">
           <span className="font-bold inline-block pb-1 mb-4 border-b-4 border-black">
             {category}
