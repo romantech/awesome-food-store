@@ -18,10 +18,18 @@ export default function Document() {
       <Head>
         <meta content="white" name="theme-color" />
         <meta name="theme-color" content="#28231c" />
-        <meta name="description" content="Awesome Food Store" />
+        <meta name="description" content="NextJS 스터디 미니 프로젝트" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Awesome Food Store" />
-        <meta property="og:description" content="Awesome Food Store" />
+        <meta
+          property="og:image"
+          content="https://user-images.githubusercontent.com/8604840/153211738-bbc70e03-c7b6-47e8-86ed-5495608f7d89.png"
+        />
+        <meta property="og:description" content="NextJS 스터디 미니 프로젝트" />
+        <meta
+          property="og:url"
+          content="https://awesome-food-store.vercel.app"
+        />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <body className="font-sans">
