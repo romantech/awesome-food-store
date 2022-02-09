@@ -19,13 +19,16 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        {/* 아이폰 사파리 노치바 배경색 수정 */}
         <meta
           name="viewport"
           content="width=device-width,initial-scale=1, shrink-to-fit=no"
         />
         <meta name="theme-color" content="#28231c" />
+
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.png" />
+
         {/* 오픈그래프 */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Awesome Food Store" />

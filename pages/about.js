@@ -2,7 +2,7 @@ import useTypeWriter from '@/hooks/useTypeWriter';
 
 export default function About() {
   const typingText = useTypeWriter({
-    content: 'NextJS를 이용해 만든 미니 프로젝트입니다 ⚡️',
+    content: 'NextJS를 이용해 만든 맛집 사이트입니다 ⚡️',
   });
 
   return (
