@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* iOS 사파리 100vh 이슈 대응(사파리는 하단 주소창까지 포함하는 문제)  */
+/* reference: https://benborgers.com/posts/tailwind-h-screen */
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+}
+
 @font-face {
   font-family: 'InfinitySans-RegularA1';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff')
@@ -23,19 +31,19 @@
   /* width */
   ::-webkit-scrollbar {
     width: 8px;
+    background: transparent;
   }
   /* Track */
   ::-webkit-scrollbar-track {
-    margin: 2px;
+    background: #28231c;
   }
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgba(211, 211, 211, 0.83);
-    border-radius: 10px;
+    background: #6c6660;
   }
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #bbbbbb;
+    background: #888379;
   }
 }
 

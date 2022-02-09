@@ -20,12 +20,7 @@ export default function Document() {
     <Html>
       <Head>
         {/* 아이폰 사파리 노치바 배경색 수정 */}
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1, shrink-to-fit=no"
-        />
         <meta name="theme-color" content="#28231c" />
-
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.png" />
 

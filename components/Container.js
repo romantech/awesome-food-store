@@ -1,9 +1,9 @@
 import { Layout, Menu } from 'antd';
-import { GithubOutlined } from '@ant-design/icons';
 import Head from 'next/head';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 import urls from '@/lib/urls';
+import { GithubOutlined } from '@ant-design/icons';
 
 const { Header, Footer, Content } = Layout;
 
@@ -16,11 +16,11 @@ function Container({ router, children }) {
   );
 
   return (
-    <Layout className="h-screen">
+    <Layout className="min-h-screen overflow-y-auto overflow-x-hidden">
       <Head>
         <title>{`AFS | ${title || 'Oops'}`}</title>
       </Head>
-      <Header className="flex gap-8 items-center">
+      <Header className="flex gap-8 items-center fixed top-0 z-10 w-full">
         <Link href={'/'}>
           <a className="font-heading text-lg text-white font-bold hover:text-white text-ellipsis overflow-hidden whitespace-nowrap">
             AWESOME FOOD STORE
@@ -42,7 +42,10 @@ function Container({ router, children }) {
           ))}
         </Menu>
       </Header>
-      <Content className="bg-primary-bg w-screen h-[calc(100vh-134px)] grid place-content-center">
+      <Content
+        style={{ minHeight: 'calc(100vh - 70px)' }}
+        className="bg-primary-bg w-screen flex flex-col justify-center items-center"
+      >
         {children}
       </Content>
       <Footer className="flex items-center gap-4">

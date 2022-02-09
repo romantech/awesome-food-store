@@ -6,7 +6,7 @@ export default function About() {
   });
 
   return (
-    <section className="w-screen relative overflow-y-auto text-primary-bg-footer px-6 py-12 flex flex-col items-center">
+    <section className="w-screen relative text-primary-bg-footer px-6 pt-28 pb-12 flex flex-col items-center">
       <h1 className="font-heading text-primary-bg-footer text-3xl lg:text-4xl font-extrabold">
         DIVE INTO <span className="bg-primary-red text-white">NextJS</span>
       </h1>

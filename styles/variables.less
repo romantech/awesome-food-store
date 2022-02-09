@@ -38,3 +38,27 @@
     color: @primary-bg-footer;
   }
 }
+
+.ant-modal {
+  max-width: 1280px;
+
+  @media screen and (any-pointer: fine) {
+    /* width */
+    ::-webkit-scrollbar {
+      width: 6px;
+      background: transparent;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: lightgray;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b6b6b6;
+    }
+  }
+}
