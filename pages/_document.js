@@ -16,6 +16,8 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <meta content="white" name="theme-color" />
+        <meta name="theme-color" content="#28231c" />
         <meta name="description" content="Awesome Food Store" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Awesome Food Store" />

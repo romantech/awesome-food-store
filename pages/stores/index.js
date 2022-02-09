@@ -12,7 +12,7 @@ export default function Stores({ stores }) {
   const title = stores[storeIdx]?.name.toUpperCase() || 'Stores';
 
   return (
-    <section className="xl:max-w-[1024px] px-4 md:px-6 py-12 flex flex-wrap justify-center gap-4 overflow-y-auto">
+    <section className="xl:max-w-[1280px] px-4 md:px-6 py-12 flex flex-wrap justify-center gap-4 overflow-y-auto">
       <Head>
         <title>{`AFS | ${title}`}</title>
       </Head>
@@ -25,7 +25,9 @@ export default function Stores({ stores }) {
               { shallow: true }, // shallow routing(데이터 fetching 없이 URL 변경)
             );
           }}
-          classNames={'w-44 h-44 lg:w-56 lg:h-56 cursor-pointer'}
+          classNames={
+            'w-[42vw] h-[42vw] max-w-[250px] max-h-[250px] cursor-pointer'
+          }
           roundLevel={'rounded-md'}
           priority={true}
           key={store.name}
@@ -36,8 +38,8 @@ export default function Stores({ stores }) {
       <Modal
         visible={!!router.query.storeIdx}
         bodyStyle={{ height: '80vh' }}
-        width="80vw"
-        style={{ top: '9.5vh' }}
+        centered
+        width="90%"
         footer={null}
         onCancel={() => router.push(returnHref)}
       >

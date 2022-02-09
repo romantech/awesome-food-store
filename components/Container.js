@@ -42,7 +42,7 @@ function Container({ router, children }) {
           ))}
         </Menu>
       </Header>
-      <Content className="overflow-y-auto bg-primary-bg w-screen h-[calc(100vh-134px)] grid place-content-center">
+      <Content className="bg-primary-bg w-screen h-[calc(100vh-134px)] grid place-content-center">
         {children}
       </Content>
       <Footer className="flex items-center gap-4">

@@ -25,8 +25,8 @@ export default function StoreInfo({ store }) {
         <Modal
           visible={true}
           bodyStyle={{ height: '80vh' }}
-          width="80vw"
-          style={{ top: '9.5vh' }}
+          centered
+          width="90%"
           footer={null}
           onCancel={() => router.push('/stores')}
         >
