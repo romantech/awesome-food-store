@@ -1,5 +1,8 @@
 import 'styles/globals.css';
 import Container from '@/components/Container';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Loading from '@/components/Loading';
 
 require('styles/variables.less'); // import 구문 쓰면 로딩 시 적용안됨
 
@@ -8,10 +11,28 @@ require('styles/variables.less'); // import 구문 쓰면 로딩 시 적용안�
 // pageProps 프롭스 : getInitialProps 를 통해 받은 props
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const handleStart = url => {
+      // url : 이동할 경로, router.pathname 현재 경로
+      url !== router.pathname ? setLoading(true) : setLoading(false);
+    };
+    const handleComplete = _url => setLoading(false);
+
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+  }, [router]);
+
   return (
-    <Container>
-      <Component {...pageProps} />
-    </Container>
+    <>
+      <Container>
+        <Loading loading={loading} />
+        <Component {...pageProps} />
+      </Container>
+    </>
   );
 }
 
