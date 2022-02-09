@@ -19,18 +19,34 @@ export default function Document() {
         <meta content="white" name="theme-color" />
         <meta name="theme-color" content="#28231c" />
         <meta name="description" content="NextJS 스터디 미니 프로젝트" />
+        <link rel="icon" href="/favicon.png" />
+        {/* 오픈그래프 */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Awesome Food Store" />
         <meta
           property="og:image"
-          content="https://user-images.githubusercontent.com/8604840/153211738-bbc70e03-c7b6-47e8-86ed-5495608f7d89.png"
+          content="https://user-images.githubusercontent.com/8604840/153217433-8c9572c6-6fa9-4646-b976-2a10de8d6b0e.png"
         />
         <meta property="og:description" content="NextJS 스터디 미니 프로젝트" />
         <meta
           property="og:url"
           content="https://awesome-food-store.vercel.app"
         />
-        <link rel="icon" href="/favicon.png" />
+        {/* 오픈그래프 소셜 */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Awesome Food Store" />
+        <meta
+          name="twitter:description"
+          content="NextJS 스터디 미니 프로젝트"
+        />
+        <meta
+          name="twitter:image"
+          content="https://user-images.githubusercontent.com/8604840/153217433-8c9572c6-6fa9-4646-b976-2a10de8d6b0e.png"
+        />
+        <meta
+          name="twitter:domain"
+          content="https://awesome-food-store.vercel.app"
+        />
       </Head>
       <body className="font-sans">
         <Main />
