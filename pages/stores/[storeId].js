@@ -41,7 +41,8 @@ export default function StoreInfo({ store }) {
 // Next.js는 몇개의 페이지를 생성해야 하는지, 어떤 페이지 id가 유효한지 알 수 없음
 // 따라서 getStaticPaths 를 통해 빌드 타임 때 정적으로 렌더링할 경로를 설정해줘야 함
 export async function getStaticPaths() {
-  const res = await fetch(`${process.env.HOST}/stores`);
+  const url = `${process.env.HOST}/stores`;
+  const res = await fetch(url);
   const stores = await res.json();
   const storePaths = stores.map(({ id }) => ({
     params: { storeId: String(id), asPath: '/stores' },
@@ -59,7 +60,8 @@ export async function getStaticPaths() {
 // 반면 getServerSideProps(SSR) 는 페이지를 요청할 때마다 데이터 GET
 // reference via https://nextjs.org/learn/basics/data-fetching/two-forms
 export async function getStaticProps({ params: { storeId } }) {
-  const res = await fetch(`${process.env.HOST}/stores/${storeId}`);
+  const url = `${process.env.HOST}/stores/${storeId}`;
+  const res = await fetch(url);
 
   if (res.status !== 200) {
     return {
