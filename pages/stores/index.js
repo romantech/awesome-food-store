@@ -12,7 +12,7 @@ export default function Stores({ stores }) {
   const title = stores[storeIdx]?.name.toUpperCase() || 'Stores';
 
   return (
-    <section className="xl:max-w-[1280px] px-4 md:px-6 pt-28 pb-12 flex flex-wrap justify-center gap-4">
+    <section className="max-w-[950px] flex flex-wrap justify-center gap-4">
       <Head>
         <title>{`AFS | ${title}`}</title>
       </Head>
@@ -26,7 +26,7 @@ export default function Stores({ stores }) {
             );
           }}
           classNames={
-            'w-[42vw] h-[42vw] max-w-[250px] max-h-[250px] cursor-pointer'
+            'w-[42vw] h-[42vw] max-w-[180px] max-h-[180px] xl:max-w-[220px] xl:max-h-[220px] cursor-pointer'
           }
           roundLevel={'rounded-md'}
           priority={true}

@@ -1,4 +1,5 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   content: [
@@ -20,5 +21,15 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // 커스텀 클래스 정의
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        '.min-h-content': {
+          minHeight: 'calc(100vh - 70px) !important',
+        },
+      };
+      addUtilities(newUtilities);
+    }),
+  ],
 };

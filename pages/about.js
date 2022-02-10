@@ -2,19 +2,19 @@ import useTypeWriter from '@/hooks/useTypeWriter';
 
 export default function About() {
   const typingText = useTypeWriter({
-    content: 'NextJS를 이용해 만든 맛집 사이트입니다 ⚡️',
+    content: 'NextJS를 이용해 만든 커먼그라운드 맛집 사이트입니다 ⚡️',
   });
 
   return (
-    <section className="w-screen relative text-primary-bg-footer px-6 pt-28 pb-12 flex flex-col items-center">
+    <section className="px-2 text-primary-bg-footer flex flex-col items-center">
       <h1 className="font-heading text-primary-bg-footer text-3xl lg:text-4xl font-extrabold">
         DIVE INTO <span className="bg-primary-red text-white">NextJS</span>
       </h1>
-      <h2 className="text-primary-bg-footer text-xl font-bold mb-14 h-7">
+      <h2 className="text-primary-bg-footer text-xl font-bold mb-10 h-7 flex-1">
         {typingText}
         <span className="blink" />
       </h2>
-      <section className="flex flex-col lg:flex-row gap-8 lg:gap-16 text-base">
+      <section className="flex flex-col lg:flex-row gap-4 lg:gap-16 text-base">
         <div>
           <h3 className="font-heading text-primary-bg-footer text-lg font-semibold border-primary-red border-b-4 py-2 px-1 w-fit">
             구현 내역

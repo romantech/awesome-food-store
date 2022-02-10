@@ -4,6 +4,7 @@
 
 /* iOS 사파리 100vh 이슈 대응(사파리는 하단 주소창까지 포함하는 문제)  */
 /* reference: https://benborgers.com/posts/tailwind-h-screen */
+/*noinspection CssInvalidPropertyValue*/
 @supports (-webkit-touch-callout: none) {
   .h-screen {
     height: -webkit-fill-available;
@@ -26,7 +27,7 @@
   font-style: normal;
 }
 
-/*정밀 포인팅 장치를 위한(터치가 아닌 장치) CSS*/
+/* 정밀 포인팅 장치를 위한(터치가 아닌 장치) CSS */
 @media screen and (any-pointer: fine) {
   /* width */
   ::-webkit-scrollbar {

@@ -6,7 +6,7 @@ function Loading({ loading }) {
     <div
       className={
         loading
-          ? 'absolute w-full h-[calc(100vh-70px)] z-20 flex items-center justify-center'
+          ? 'absolute w-full min-h-content z-20 flex items-center justify-center'
           : 'hidden'
       }
     >
