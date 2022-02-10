@@ -3,6 +3,7 @@ import useTypeWriter from '@/hooks/useTypeWriter';
 export default function About() {
   const typingText = useTypeWriter({
     content: 'NextJS를 이용해 만든 커먼그라운드 맛집 사이트입니다 ⚡️',
+    isBlink: true,
   });
 
   return (
@@ -12,7 +13,6 @@ export default function About() {
       </h1>
       <h2 className="text-primary-bg-footer text-xl font-bold mb-10 h-7 flex-1">
         {typingText}
-        <span className="blink" />
       </h2>
       <section className="flex flex-col lg:flex-row gap-4 lg:gap-16 text-base">
         <div>

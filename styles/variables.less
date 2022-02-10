@@ -22,6 +22,10 @@
 .@{layout-prefix-cls} {
   &-footer {
     color: @primary-bg;
+    padding: 24px 1.25rem;
+    @media (min-width: 640px) {
+      padding: @layout-footer-padding;
+    }
   }
 
   &-header {

@@ -2,7 +2,7 @@
 // reference : https://medium.com/codex/a-nice-typing-animation-with-react-js-6cda948af10f
 import { useEffect, useState } from 'react';
 
-export default function useTypeWriter({ content, sec = 100 }) {
+export default function useTypeWriter({ content, sec = 100, isBlink = false }) {
   const [displayedContent, setDisplayedContent] = useState('');
   const [index, setIndex] = useState(0);
 
@@ -23,5 +23,10 @@ export default function useTypeWriter({ content, sec = 100 }) {
     setDisplayedContent(displayedContent => displayedContent + content[index]);
   }, [index]);
 
-  return displayedContent;
+  return (
+    <>
+      {displayedContent}
+      {isBlink && <span className="blink" />}
+    </>
+  );
 }
