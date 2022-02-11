@@ -9,7 +9,7 @@ if (typeof document === 'undefined') {
 }
 
 const description =
-  'NextJS를 이용해 만든 간단한 맛집 사이트입니다. NextJS의 정적 생성(Static Generation) 방식으로 구현했으며, 모달창에도 하위 경로가 붙는 인스타그램 스타일 모달 라우팅을 적용했습니다.';
+  'NextJS를 이용해 만든 커먼그라운드 맛집 사이트입니다. NextJS의 정적 생성(Static Generation) 방식으로 구현했으며, 모달창에도 하위 경로가 붙는 인스타그램 스타일 모달 라우팅을 적용했습니다.';
 
 // _document.js 역할 : HTMl 문서 전체 설정(meta 태그 등) / 전체 페이지에 적용됨
 // _document.js 에선 React Lifecycle Hook, Data Fetching 사용 불가

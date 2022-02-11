@@ -42,7 +42,7 @@ export default function About() {
             <li>Tailwind CSS + ClassNames</li>
             <li>Ant Design</li>
             <li>JSON Server (fake REST API)</li>
-            <li>Next use contextual routing</li>
+            <li>Next Use Contextual Routing</li>
           </ul>
         </div>
       </section>
