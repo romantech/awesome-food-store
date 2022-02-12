@@ -2,7 +2,10 @@ import useTypeWriter from '@/hooks/useTypeWriter';
 
 export default function About() {
   const typingText = useTypeWriter({
-    content: 'NextJS를 이용해 만든 커먼그라운드 맛집 사이트입니다 ⚡️',
+    content: [
+      '약 4일간(리팩토링 제외) 작업한 NextJS 미니 프로젝트입니다',
+      'NextJS를 이용해 만든 커먼그라운드 맛집 사이트입니다 ⚡️',
+    ],
     hasBlink: true,
   });
 
