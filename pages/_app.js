@@ -15,11 +15,9 @@ function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const handleStart = url => {
-      // url : 이동할 경로, router.pathname 현재 경로
-      url !== router.pathname ? setLoading(true) : setLoading(false);
-    };
-    const handleComplete = _url => setLoading(false);
+    // url : 이동할 경로, router.pathname 현재 경로
+    const handleStart = url => setLoading(url !== router.pathname);
+    const handleComplete = () => setLoading(false);
 
     router.events.on('routeChangeStart', handleStart);
     router.events.on('routeChangeComplete', handleComplete);
@@ -29,7 +27,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Container>
-        <Loading loading={loading} />
+        <Loading loading={loading} delay={300} />
         <Component {...pageProps} />
       </Container>
     </>
