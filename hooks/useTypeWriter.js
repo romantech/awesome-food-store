@@ -1,32 +1,33 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-// reference : https://medium.com/codex/a-nice-typing-animation-with-react-js-6cda948af10f
+// reference : https://www.maartenhus.nl/blog/typewriter-effect/
 import { useEffect, useState } from 'react';
+import { textGenerator } from '@/lib/utils';
 
-export default function useTypeWriter({ content, sec = 100, isBlink = false }) {
+export default function useTypeWriter({
+  content,
+  sec = 100,
+  hasBlink = false,
+}) {
   const [displayedContent, setDisplayedContent] = useState('');
-  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const animKey = setInterval(() => {
-      setIndex(index => {
-        if (index >= content.length - 1) {
-          clearInterval(animKey);
-          return index;
-        }
-        return index + 1;
-      });
+    const generator = textGenerator(content);
+    const interval = setInterval(() => {
+      const { value, done } = generator.next();
+      if (done) {
+        clearInterval(interval);
+      } else {
+        setDisplayedContent(value);
+      }
     }, sec);
-    return () => clearInterval(animKey);
-  }, []);
 
-  useEffect(() => {
-    setDisplayedContent(displayedContent => displayedContent + content[index]);
-  }, [index]);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
       {displayedContent}
-      {isBlink && <span className="blink" />}
+      {hasBlink && <span className="blink" />}
     </>
   );
 }

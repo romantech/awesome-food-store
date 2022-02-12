@@ -3,7 +3,7 @@ import useTypeWriter from '@/hooks/useTypeWriter';
 export default function About() {
   const typingText = useTypeWriter({
     content: 'NextJS를 이용해 만든 커먼그라운드 맛집 사이트입니다 ⚡️',
-    isBlink: true,
+    hasBlink: true,
   });
 
   return (
