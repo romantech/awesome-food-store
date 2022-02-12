@@ -22,9 +22,10 @@ function Container({ router, children }) {
       </Head>
       <Header className="flex gap-8 items-center fixed top-0 z-10 w-full">
         <Link href={'/'}>
-          <a className="font-heading text-lg text-white font-bold hover:text-white text-ellipsis overflow-hidden whitespace-nowrap">
-            AWESOME FOOD STORE
-          </a>
+          <a
+            data-title="AWESOME FOOD STORE"
+            className="before:content-['AFS'] ss:before:content-[attr(data-title)] font-heading text-lg text-white font-bold hover:text-white text-ellipsis overflow-hidden whitespace-nowrap"
+          />
         </Link>
         <Menu
           className="flex-auto"

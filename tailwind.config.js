@@ -19,6 +19,9 @@ module.exports = {
         'primary-bg': '#28231c',
         'primary-bg-footer': '#eae1df',
       },
+      screens: {
+        ss: '450px', // @media (min-width: 450px) {...}
+      },
     },
   },
   plugins: [
