@@ -7,6 +7,7 @@ export default function About() {
       'NextJS를 이용해 만든 커먼그라운드 맛집 사이트입니다 ⚡️',
     ],
     hasBlink: true,
+    loop: true,
   });
 
   return (

@@ -7,11 +7,12 @@ export default function useTypeWriter({
   content,
   sec = 100,
   hasBlink = false,
+  loop = false,
 }) {
   const [displayedContent, setDisplayedContent] = useState('');
 
   useEffect(() => {
-    const generator = textGenerator(content);
+    const generator = textGenerator(content, loop);
     const interval = setInterval(() => {
       const { value, done } = generator.next();
       if (done) {
