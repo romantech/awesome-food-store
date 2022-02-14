@@ -25,12 +25,10 @@ function MyApp({ Component, pageProps }) {
   }, [router]);
 
   return (
-    <>
-      <Container>
-        <Loading loading={loading} delay={300} />
-        <Component {...pageProps} />
-      </Container>
-    </>
+    <Container>
+      <Loading loading={loading} delay={300} />
+      <Component {...pageProps} />
+    </Container>
   );
 }
 

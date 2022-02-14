@@ -4,12 +4,14 @@ import { useContextualRouting } from 'next-use-contextual-routing';
 import { Modal } from 'antd';
 import ModalContent from '@/components/ModalContent';
 import Head from 'next/head';
+import useCurrentSize from '@/hooks/useCurrentSize';
 
 export default function Stores({ stores }) {
   const router = useRouter();
   const { storeIdx } = router.query;
   const { makeContextualHref, returnHref } = useContextualRouting();
   const title = stores[storeIdx]?.name.toUpperCase() || 'Stores';
+  const { width } = useCurrentSize();
 
   return (
     <section className="max-w-[950px] flex flex-wrap justify-center gap-4">
@@ -18,13 +20,13 @@ export default function Stores({ stores }) {
       </Head>
       {stores.map((store, idx) => (
         <FillLayoutImage
-          callback={() => {
+          callback={() =>
             router.push(
               makeContextualHref({ storeIdx: idx }),
               `/stores/${store.id}`,
               { shallow: true }, // shallow routing(데이터 fetching 없이 URL 변경)
-            );
-          }}
+            )
+          }
           classNames={
             'w-[42vw] h-[42vw] max-w-[180px] max-h-[180px] xl:max-w-[220px] xl:max-h-[220px] cursor-pointer'
           }
@@ -36,10 +38,10 @@ export default function Stores({ stores }) {
         />
       ))}
       <Modal
-        visible={!!router.query.storeIdx}
-        bodyStyle={{ height: '80vh' }}
+        visible={!!storeIdx}
+        bodyStyle={{ height: width <= 449 ? '100vh' : '80vh' }}
         centered
-        width="90%"
+        width={width <= 449 ? width : '90%'}
         footer={null}
         onCancel={() => router.push(returnHref)}
       >

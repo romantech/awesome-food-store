@@ -1,13 +1,17 @@
+// noinspection JSIgnoredPromiseFromCall
+
 import { Modal } from 'antd';
 import { useRouter } from 'next/router';
 import ModalContent from '@/components/ModalContent';
 import { useEffect } from 'react';
 import { useMounted } from '@/hooks/useMount';
 import Head from 'next/head';
+import useCurrentSize from '@/hooks/useCurrentSize';
 
 export default function StoreInfo({ store }) {
   const router = useRouter();
   const isMounted = useMounted();
+  const { width } = useCurrentSize();
   // Expected server HTML to contain a matching <div> 오류 대응
   // reference : https://github.com/vercel/next.js/discussions/15021
 
@@ -17,23 +21,24 @@ export default function StoreInfo({ store }) {
   }, []);
 
   return (
-    <>
+    // 모달창으로 바로 진입하면 iPhone - 스크롤시 하단 주소창 축소가 안돼서 강제로 높이 부여
+    <section className="min-h-screen">
       <Head>
         <title>{`AFS | ${store.name.toUpperCase()}`}</title>
       </Head>
       {isMounted && (
         <Modal
           visible={true}
-          bodyStyle={{ height: '80vh' }}
+          bodyStyle={{ height: width <= 449 ? '100vh' : '80vh' }}
           centered
-          width="90%"
+          width={width <= 449 ? width : '90%'}
           footer={null}
           onCancel={() => router.push('/stores')}
         >
           <ModalContent store={store} />
         </Modal>
       )}
-    </>
+    </section>
   );
 }
 

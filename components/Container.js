@@ -16,7 +16,7 @@ function Container({ router, children }) {
   );
 
   return (
-    <Layout className="min-h-screen overflow-y-auto overflow-x-hidden">
+    <Layout className="min-h-screen overflow-x-hidden">
       <Head>
         <title>{`AFS | ${title || 'Oops'}`}</title>
       </Head>

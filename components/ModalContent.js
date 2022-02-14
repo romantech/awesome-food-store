@@ -9,18 +9,18 @@ export default function ModalContent({ store }) {
   const modifiedDesc = splitDesc.slice(3);
 
   return (
-    <div className="p-5 lg:p-8 flex flex-col lg:flex-row h-full w-full justify-evenly gap-10">
+    <div className="pb-5 ss:p-8 flex flex-col lg:flex-row h-full w-full gap-10">
       <FillLayoutImage
-        classNames="h-[30%] lg:h-full w-full lg:w-[45%]"
+        classNames="h-[45%] lg:h-full w-full lg:w-[45%]"
         priority={true}
         src={image}
         alt={name}
       />
       <section
         style={{ WebkitOverflowScrolling: 'touch' }}
-        className="w-full lg:w-[50%] h-full overflow-y-auto pr-4"
+        className="w-full lg:w-[50%] h-full overflow-y-auto overscroll-y-contain p-5 ss:p-0 ss:pr-4"
       >
-        <header className="font-heading  mb-6 lg:mb-4 lg:h-[19.5%]">
+        <header className="font-heading mb-6 lg:mb-4 lg:h-[19.5%]">
           <span className="font-bold inline-block pb-1 mb-4 border-b-4 border-black">
             {category}
           </span>
