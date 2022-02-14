@@ -22,7 +22,7 @@ export default function StoreInfo({ store }) {
 
   return (
     // 모달창으로 바로 진입하면 iPhone - 스크롤시 하단 주소창 축소가 안돼서 강제로 높이 부여
-    <section className="min-h-screen">
+    <section className="min-h-screen bg-white">
       <Head>
         <title>{`AFS | ${store.name.toUpperCase()}`}</title>
       </Head>

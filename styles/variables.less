@@ -43,28 +43,35 @@
   }
 }
 
-.ant-modal {
-  max-width: 1280px;
+@media (max-width: 449px) {
+  .ant-modal-mask {
+    background: white;
+    min-height: 100vh;
+  }
 
-  @media (max-width: 449px) {
+  .ant-modal-body {
+    padding: 0;
+  }
+  .ant-modal-content {
+    border-radius: 0;
+  }
+  .ant-modal-close-icon {
+    background: white;
+    color: black;
+    padding: 6px;
+    border-radius: 20px;
+  }
+
+  .ant-modal {
     position: fixed;
     margin: 0;
     top: 0;
     left: 0;
-
-    .ant-modal-body {
-      padding: 0;
-    }
-    .ant-modal-content {
-      border-radius: 0;
-    }
-    .ant-modal-close-icon {
-      background: white;
-      color: black;
-      padding: 6px;
-      border-radius: 20px;
-    }
   }
+}
+
+.ant-modal {
+  max-width: 1280px;
 
   @media screen and (any-pointer: fine) {
     /* width */

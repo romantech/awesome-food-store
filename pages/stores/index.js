@@ -5,6 +5,8 @@ import { Modal } from 'antd';
 import ModalContent from '@/components/ModalContent';
 import Head from 'next/head';
 import useCurrentSize from '@/hooks/useCurrentSize';
+import { useEffect } from 'react';
+import { bodyScrollLock } from '@/lib/utils';
 
 export default function Stores({ stores }) {
   const router = useRouter();
@@ -12,6 +14,15 @@ export default function Stores({ stores }) {
   const { makeContextualHref, returnHref } = useContextualRouting();
   const title = stores[storeIdx]?.name.toUpperCase() || 'Stores';
   const { width } = useCurrentSize();
+
+  useEffect(() => {
+    // 모달창이 열려있을 땐 컨테이너(body 등) scroll 잠금
+    if (storeIdx) {
+      bodyScrollLock('.ant-layout').enable();
+    } else {
+      bodyScrollLock('.ant-layout').disable();
+    }
+  }, [storeIdx]);
 
   return (
     <section className="max-w-[950px] flex flex-wrap justify-center gap-4">
