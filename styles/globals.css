@@ -11,11 +11,6 @@
   }
 }
 
-body {
-  min-width: 100vw;
-  /* 모달창 열었을 때 antd 가 추가하는 인라인 스타일에 의한 세로 스크롤 hide */
-}
-
 @font-face {
   font-family: 'InfinitySans-RegularA1';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff')
