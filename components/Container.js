@@ -43,7 +43,7 @@ function Container({ router, children }) {
           ))}
         </Menu>
       </Header>
-      <Content className="h-0 min-h-content bg-primary-bg w-screen pt-28 pb-12 px-4 flex flex-col justify-center items-center">
+      <Content className="min-h-content bg-primary-bg w-screen pt-28 pb-12 px-4 flex flex-col justify-center items-center">
         {children}
       </Content>
       <Footer className="flex items-center gap-4">

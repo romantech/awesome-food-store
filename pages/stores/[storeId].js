@@ -20,18 +20,19 @@ export default function StoreInfo({ store }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const isMobile = width <= 449;
   return (
     // 모달창으로 바로 진입하면 iPhone - 스크롤시 하단 주소창 축소가 안돼서 강제로 높이 부여
-    <section className="min-h-screen bg-white">
+    <section className={`${isMobile && 'min-h-screen bg-white'}`}>
       <Head>
         <title>{`AFS | ${store.name.toUpperCase()}`}</title>
       </Head>
       {isMounted && (
         <Modal
           visible={true}
-          bodyStyle={{ height: width <= 449 ? '100vh' : '80vh' }}
+          bodyStyle={{ height: isMobile ? '100vh' : '80vh' }}
           centered
-          width={width <= 449 ? width : '90%'}
+          width={isMobile ? width : '90%'}
           footer={null}
           onCancel={() => router.push('/stores')}
         >
