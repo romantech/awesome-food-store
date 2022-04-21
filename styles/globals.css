@@ -2,66 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* iOS 사파리 100vh 이슈 대응(사파리는 하단 주소창까지 포함하는 문제)  */
-/* reference: https://benborgers.com/posts/tailwind-h-screen */
-/*noinspection CssInvalidPropertyValue*/
-@supports (-webkit-touch-callout: none) {
-  .h-screen {
-    height: -webkit-fill-available;
+@layer base {
+  /* iOS 사파리 100vh 이슈 대응(사파리는 하단 주소창까지 포함하는 문제)  */
+  /* reference: https://benborgers.com/posts/tailwind-h-screen */
+  /*noinspection CssInvalidPropertyValue*/
+  @supports (-webkit-touch-callout: none) {
+    .h-screen {
+      height: -webkit-fill-available;
+    }
   }
-}
 
-@font-face {
-  font-family: 'InfinitySans-RegularA1';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'InfinitySans-BoldA1';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-BoldA1.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* 정밀 포인팅 장치를 위한(터치가 아닌 장치) CSS */
-@media screen and (any-pointer: fine) {
-  /* width */
-  ::-webkit-scrollbar {
-    width: 8px;
-    background: transparent;
+  @font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff')
+      format('woff');
+    font-weight: normal;
+    font-style: normal;
   }
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #28231c;
-  }
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #6c6660;
-  }
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #888379;
-  }
-}
 
-/* 타이핑 커서 효과 */
-.blink::after {
-  content: '|';
-}
+  @font-face {
+    font-family: 'InfinitySans-BoldA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-BoldA1.woff')
+      format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
 
-.blink {
-  animation: blink 1s step-end infinite;
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin-left: 4px;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
+  /* 정밀 포인팅 장치를 위한(터치가 아닌 장치) CSS */
+  @media screen and (any-pointer: fine) {
+    /* width */
+    ::-webkit-scrollbar {
+      width: 8px;
+      background: transparent;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #28231c;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #6c6660;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #888379;
+    }
   }
 }

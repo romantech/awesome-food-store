@@ -26,9 +26,11 @@ export default function useTypeWriter({
   }, []);
 
   return (
-    <>
+    <span>
       {displayedContent}
-      {hasBlink && <span className="blink" />}
-    </>
+      {hasBlink && (
+        <span className="animate-blink text-2xl font-light ml-1">|</span>
+      )}
+    </span>
   );
 }
