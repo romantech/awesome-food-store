@@ -15,7 +15,7 @@ function Loading({ loading, delay = 0 }) {
     <div
       className={
         delayLoading
-          ? 'absolute top-0 w-full h-full bg-[#0000008a] z-20 flex items-center justify-center'
+          ? 'absolute top-0 z-20 flex h-full w-full items-center justify-center bg-[#0000008a]'
           : 'hidden'
       }
     >

@@ -20,11 +20,11 @@ function Container({ router, children }) {
       <Head>
         <title>{`AFS | ${title || 'Oops'}`}</title>
       </Head>
-      <Header className="flex gap-8 items-center fixed top-0 z-10 w-full">
+      <Header className="fixed top-0 z-10 flex w-full items-center gap-8">
         <Link href={'/'}>
           <a
             data-title="AWESOME FOOD STORE"
-            className="before:content-['AFS'] ss:before:content-[attr(data-title)] font-heading text-lg text-white font-bold hover:text-white text-ellipsis overflow-hidden whitespace-nowrap"
+            className="overflow-hidden text-ellipsis whitespace-nowrap font-heading text-lg font-bold text-white before:content-['AFS'] hover:text-white ss:before:content-[attr(data-title)]"
           />
         </Link>
         <Menu
@@ -43,7 +43,7 @@ function Container({ router, children }) {
           ))}
         </Menu>
       </Header>
-      <Content className="min-h-content bg-primary-bg w-screen pt-28 pb-12 px-4 flex flex-col justify-center items-center">
+      <Content className="flex w-screen flex-col items-center justify-center bg-primary-bg px-4 pt-28 pb-12 min-h-content">
         {children}
       </Content>
       <Footer className="flex items-center gap-4">

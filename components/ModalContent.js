@@ -9,7 +9,7 @@ export default function ModalContent({ store }) {
   const modifiedDesc = splitDesc.slice(3);
 
   return (
-    <div className="pb-5 ss:p-8 flex flex-col lg:flex-row h-full w-full gap-10">
+    <div className="flex h-full w-full flex-col gap-10 pb-5 ss:p-8 lg:flex-row">
       <FillLayoutImage
         classNames="h-[45%] lg:h-full w-full lg:w-[45%]"
         priority={true}
@@ -18,25 +18,25 @@ export default function ModalContent({ store }) {
       />
       <section
         style={{ WebkitOverflowScrolling: 'touch' }}
-        className="w-full lg:w-[50%] h-full overflow-y-auto overscroll-y-contain p-5 ss:p-0 ss:pr-4"
+        className="h-full w-full overflow-y-auto overscroll-y-contain p-5 ss:p-0 ss:pr-4 lg:w-[50%]"
       >
-        <header className="font-heading mb-6 lg:mb-4 lg:h-[19.5%]">
-          <span className="font-bold inline-block pb-1 mb-4 border-b-4 border-black">
+        <header className="mb-6 font-heading lg:mb-4 lg:h-[19.5%]">
+          <span className="mb-4 inline-block border-b-4 border-black pb-1 font-bold">
             {category}
           </span>
-          <h1 className="text-2xl lg:text-3xl 2xl:text-5xl uppercase">
+          <h1 className="text-2xl uppercase lg:text-3xl 2xl:text-5xl">
             {name}
           </h1>
         </header>
-        <article className="flex flex-col text-base 2xl:text-lg h-[77%] justify-start">
-          <section className="whitespace-pre-line grow">{modifiedDesc}</section>
+        <article className="flex h-[77%] flex-col justify-start text-base 2xl:text-lg">
+          <section className="grow whitespace-pre-line">{modifiedDesc}</section>
           <section>
-            <div className="border-t border-b py-2 flex justify-start items-center">
+            <div className="flex items-center justify-start border-t border-b py-2">
               <ClockCircleOutlined />
               <span className="ml-2">{lastOrder}</span>
             </div>
             {url && (
-              <div className="border-b py-2 flex justify-start items-center">
+              <div className="flex items-center justify-start border-b py-2">
                 <HomeOutlined />
                 <a
                   className="ml-2 overflow-hidden text-ellipsis whitespace-nowrap"

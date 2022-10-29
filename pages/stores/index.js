@@ -25,7 +25,7 @@ export default function Stores({ stores }) {
   }, [storeIdx]);
 
   return (
-    <section className="max-w-[950px] flex flex-wrap justify-center gap-4">
+    <section className="flex max-w-[950px] flex-wrap justify-center gap-4">
       <Head>
         <title>{`AFS | ${title}`}</title>
       </Head>
