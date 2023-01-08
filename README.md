@@ -23,6 +23,7 @@
 - Static Generation (Pre-rendering)
 - Dynamic/Shallow Routing, Dynamic Title
 - Loading spinner on page transition
+- Typewriter effect using Generator API on the About page
 
 # 프로젝트 목적
 
