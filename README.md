@@ -1,8 +1,8 @@
-# 커먼그라운드 맛집 모음 미니 프로젝트
+# 커먼그라운드 맛집 모음
 
 ![awesome-food-store](https://user-images.githubusercontent.com/8604840/153662986-e44c4d6a-6fe0-41a2-8848-187365048db3.gif)
 
-> _NextJS를 이용해 만든 건대 커먼그라운드 맛집 사이트입니다_
+> _NextJS를 이용해 만든 건대 커먼그라운드 맛집 미니 프로젝트입니다_
 
 - Live Demo : [awesome-food-store.vercel.app](https://awesome-food-store.vercel.app)
 - 작업 기간 : 4일 (리팩토링 기간 제외)
