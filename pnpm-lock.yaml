@@ -52,6 +52,9 @@ devDependencies:
   eslint-config-standard:
     specifier: ^17.1.0
     version: 17.1.0(eslint-plugin-import@2.29.0)(eslint-plugin-n@16.2.0)(eslint-plugin-promise@6.1.1)(eslint@8.52.0)
+  eslint-plugin-n:
+    specifier: ^16.2.0
+    version: 16.2.0(eslint@8.52.0)
   eslint-plugin-node:
     specifier: ^11.1.0
     version: 11.1.0(eslint@8.52.0)
