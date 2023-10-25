@@ -49,7 +49,7 @@ export default function Stores({ stores }) {
         />
       ))}
       <Modal
-        visible={!!storeIdx}
+        open={!!storeIdx}
         bodyStyle={{ height: width <= 449 ? '100vh' : '80vh' }}
         centered
         width={width <= 449 ? width : '90%'}

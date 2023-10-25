@@ -29,7 +29,7 @@ export default function StoreInfo({ store }) {
       </Head>
       {isMounted && (
         <Modal
-          visible={true}
+          open={true}
           bodyStyle={{ height: isMobile ? '100vh' : '80vh' }}
           centered
           width={isMobile ? width : '90%'}
