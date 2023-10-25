@@ -21,7 +21,7 @@
     "@vercel/analytics": "^1.0.1",
     "antd": "^4.18.5",
     "classnames": "^2.3.1",
-    "next": "13.5.0",
+    "next": "13.5.1",
     "next-plugin-antd-less": "^1.8.0",
     "next-use-contextual-routing": "^2.1.0",
     "react": "17.0.2",
