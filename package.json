@@ -19,9 +19,9 @@
   "dependencies": {
     "@vercel/analytics": "^1.1.1",
     "classnames": "^2.3.2",
-    "next": "13.5.0",
+    "next": "12.1.0",
     "next-plugin-antd-less": "^1.8.0",
-    "next-use-contextual-routing": "^2.1.0",
+    "next-use-contextual-routing": "^2.3.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
