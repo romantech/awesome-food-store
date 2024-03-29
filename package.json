@@ -41,7 +41,7 @@
     "husky": "^8.0.3",
     "json-server": "^0.17.4",
     "lint-staged": "^15.0.2",
-    "postcss": "^8.4.32",
+    "postcss": "^8.4.33",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
     "tailwindcss": "^3.3.4"
