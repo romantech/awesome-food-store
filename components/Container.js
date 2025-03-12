@@ -14,6 +14,12 @@ function Container({ router, children }) {
     '',
   );
 
+  const menuItems = urls.map(({ name, path }) => ({
+    key: name.toLowerCase(),
+    label: name,
+    onClick: () => router.push(path),
+  }));
+
   return (
     <Layout className="min-h-screen overflow-x-hidden">
       <Head>
@@ -30,16 +36,8 @@ function Container({ router, children }) {
           theme="dark"
           mode="horizontal"
           selectedKeys={selectedKeys}
-        >
-          {urls.map(({ name, path }) => (
-            <Menu.Item
-              key={name.toLowerCase()}
-              onClick={() => router.push(path)}
-            >
-              {name}
-            </Menu.Item>
-          ))}
-        </Menu>
+          items={menuItems}
+        />
       </Header>
       <Content className="flex w-screen flex-col items-center justify-center bg-primary-bg px-4 pt-28 pb-12 min-h-content">
         {children}
