@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { withRouter } from 'next/router';
 import urls from '@/lib/urls';
 import { GithubOutlined } from '@ant-design/icons';
+import Link from 'next/link';
 
 const { Header, Footer, Content } = Layout;
 
@@ -26,9 +27,9 @@ function Container({ router, children }) {
         <title>{`AFS | ${title || 'Oops'}`}</title>
       </Head>
       <Header className="fixed top-0 z-10 flex w-full items-center gap-8">
-        <a
+        <Link
           data-title="AWESOME FOOD STORE"
-          target="_blank"
+          href="/"
           className="overflow-hidden text-ellipsis whitespace-nowrap font-heading text-lg font-bold text-white before:content-['AFS'] hover:text-white ss:before:content-[attr(data-title)]"
         />
         <Menu
