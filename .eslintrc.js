@@ -10,7 +10,7 @@ module.exports = {
   // eslint-[config-prettier/plugin-prettier]를 사용하면 extends 배열에 'plugin:prettier/recommended' 만 추가하면 됨
   // eslint-config-next 패키지엔 eslint-plugin-react/reacts/next 등을 모두 포함하므로 extends 배열엔 'next' 만 추가 (참고: https://bit.ly/3PMFalD)
   // airbnb 등 다른 플러그인과 함께 사용하려면 eslint-config-next 패키지 지우고 @next/eslint-plugin-next 설치/추가 (참고 : https://bit.ly/3J5j3nU)
-  extends: ['standard', 'next', 'plugin:prettier/recommended'],
+  extends: ['next', 'plugin:prettier/recommended'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
