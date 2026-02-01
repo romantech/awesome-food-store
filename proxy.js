@@ -8,7 +8,7 @@ import { NextResponse } from 'next/server';
  * @param {any} _ev - the event parameter (unused)
  * @return {object} the rewritten URL response
  */
-export function middleware(req, _ev) {
+export function proxy(req, _ev) {
   return NextResponse.rewrite(new URL('/stores', req.url));
 }
 
