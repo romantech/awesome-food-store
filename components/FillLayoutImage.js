@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import classnames from 'classnames';
 
 /*
@@ -35,8 +35,10 @@ export default function FillLayoutImage({
         src={src}
         alt={alt}
         onClick={callback}
-        priority={priority} // true면 preload 활성화 / Lazy Load 비활성
-        layout="fill"
+        // true면 preload 활성화 / Lazy Load 비활성
+        priority={priority}
+        fill
+        sizes="100vw"
       />
     </div>
   );
