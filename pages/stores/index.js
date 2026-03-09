@@ -7,6 +7,7 @@ import Head from 'next/head';
 import useCurrentSize from '@/hooks/useCurrentSize';
 import { useEffect } from 'react';
 import { bodyScrollLock } from '@/lib/utils';
+import { buildDbUrl } from '@/lib/db-url';
 
 export default function Stores({ stores }) {
   const router = useRouter();
@@ -41,6 +42,7 @@ export default function Stores({ stores }) {
           classNames={
             'w-[42vw] h-[42vw] max-w-[180px] max-h-[180px] xl:max-w-[220px] xl:max-h-[220px] cursor-pointer'
           }
+          sizes="(min-width: 1280px) 220px, (min-width: 950px) 180px, 42vw"
           roundLevel={'rounded-md'}
           priority={true}
           key={store.name}
@@ -64,8 +66,17 @@ export default function Stores({ stores }) {
 
 // 빌드 시 데이터 GET
 export async function getStaticProps() {
-  const url = `${process.env.DB_URL}/stores`;
-  const res = await fetch(url);
+  let res;
+  try {
+    const url = buildDbUrl('/stores');
+    res = await fetch(url);
+  } catch (_error) {
+    return {
+      redirect: {
+        destination: '/about',
+      },
+    };
+  }
 
   if (res.status !== 200) {
     return {

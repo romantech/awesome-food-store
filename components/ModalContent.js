@@ -12,6 +12,7 @@ export default function ModalContent({ store }) {
     <div className="flex h-full w-full flex-col gap-10 pb-5 ss:p-8 lg:flex-row">
       <FillLayoutImage
         classNames="h-[45%] lg:h-full w-full lg:w-[45%]"
+        sizes="(max-width: 449px) 100vw, (min-width: 1024px) 41vw, 90vw"
         priority={true}
         src={image}
         alt={name}
