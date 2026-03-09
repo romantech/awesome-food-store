@@ -63,7 +63,6 @@ export default function Stores({ stores }) {
 }
 
 // 빌드 시 데이터 GET
-// eslint-disable-next-line no-unused-vars
 export async function getStaticProps({ params }) {
   const url = `${process.env.DB_URL}/stores`;
   const res = await fetch(url);

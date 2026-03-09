@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 // reference : https://www.maartenhus.nl/blog/typewriter-effect/
 import { useEffect, useState } from 'react';
 import { textGenerator } from '@/lib/utils';

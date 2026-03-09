@@ -17,7 +17,6 @@ export default function StoreInfo({ store }) {
 
   useEffect(() => {
     router.prefetch('/stores'); // /stores 페이지 미리 로드
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const isMobile = width <= 449;
