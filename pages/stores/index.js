@@ -63,7 +63,7 @@ export default function Stores({ stores }) {
 }
 
 // 빌드 시 데이터 GET
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   const url = `${process.env.DB_URL}/stores`;
   const res = await fetch(url);
 
