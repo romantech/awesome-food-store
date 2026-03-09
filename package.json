@@ -6,9 +6,9 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "biome lint .",
-    "db": "json-server --watch db.json --port 3001",
+    "db": "json-server db.json --port 3001",
     "check:fix": "biome check . --write",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": ["biome check --write"]
@@ -28,9 +28,9 @@
     "antd": "4.24.14",
     "autoprefixer": "^10.4.27",
     "babel-plugin-import": "^1.13.8",
-    "husky": "^8.0.3",
-    "json-server": "^0.17.4",
-    "lint-staged": "^15.5.2",
+    "husky": "^9.1.7",
+    "json-server": "1.0.0-beta.12",
+    "lint-staged": "^16.3.2",
     "postcss": "^8.5.8",
     "tailwindcss": "^3.4.19"
   }
