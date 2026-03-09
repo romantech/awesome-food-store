@@ -8,7 +8,6 @@ function Loading({ loading, delay = 0 }) {
     // 로딩 깜박임 방지를 위해 300ms 이후에만 로딩 화면 표시
     const timer = setTimeout(() => setDelayLoading(loading), delay);
     return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
   return (

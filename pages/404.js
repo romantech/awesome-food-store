@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Result } from 'antd';
 import { useRouter } from 'next/router';
 
@@ -13,7 +13,6 @@ export default function Custom404() {
 
   useEffect(() => {
     if (seconds === 0) router.replace('/about'); // 홈 컴포넌트 작성안해서 /about 으로 이동
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seconds]);
 
   return (
