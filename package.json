@@ -1,6 +1,7 @@
 {
   "name": "awesome-food-store",
   "private": true,
+  "packageManager": "pnpm@11.20.0",
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack",
@@ -18,7 +19,7 @@
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
     "classnames": "^2.5.1",
-    "next": "16.2.6",
+    "next": "16.2.12",
     "next-plugin-antd-less": "^1.8.0",
     "next-use-contextual-routing": "^4.1.0",
     "react": "^19.2.8",
