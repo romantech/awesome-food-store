@@ -11,7 +11,9 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": ["biome check --write"]
+    "**/*.{js,jsx,ts,tsx}": [
+      "biome check --write"
+    ]
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
@@ -19,19 +21,19 @@
     "next": "16.2.6",
     "next-plugin-antd-less": "^1.8.0",
     "next-use-contextual-routing": "^4.1.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@ant-design/icons": "^5.6.1",
-    "@biomejs/biome": "^2.4.6",
+    "@biomejs/biome": "^2.5.6",
     "antd": "4.24.14",
-    "autoprefixer": "^10.4.27",
+    "autoprefixer": "^10.5.4",
     "babel-plugin-import": "^1.13.8",
     "husky": "^9.1.7",
     "json-server": "1.0.0-beta.12",
-    "lint-staged": "^16.3.2",
-    "postcss": "^8.5.12",
+    "lint-staged": "^16.4.0",
+    "postcss": "^8.5.25",
     "tailwindcss": "^3.4.19"
   }
 }
