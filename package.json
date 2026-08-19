@@ -17,7 +17,7 @@
     ]
   },
   "dependencies": {
-    "@vercel/analytics": "^1.6.1",
+    "@vercel/analytics": "^2.0.1",
     "classnames": "^2.5.1",
     "next": "16.2.12",
     "next-plugin-antd-less": "^1.8.0",
@@ -27,14 +27,14 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^5.6.1",
-    "@biomejs/biome": "^2.5.6",
+    "@biomejs/biome": "^2.5.9",
     "antd": "4.24.14",
     "autoprefixer": "^10.5.4",
     "babel-plugin-import": "^1.13.8",
     "husky": "^9.1.7",
-    "json-server": "1.0.0-beta.12",
-    "lint-staged": "^16.4.0",
-    "postcss": "^8.5.25",
+    "json-server": "1.0.0-beta.15",
+    "lint-staged": "^17.3.0",
+    "postcss": "^8.5.26",
     "tailwindcss": "^3.4.19"
   }
 }
