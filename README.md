@@ -12,7 +12,7 @@
 - React + NextJS
 - Tailwind CSS + ClassNames
 - Ant Design
-- JSON Server (fake REST API)
+- JSON 데이터 (`db.json`)
 - Next Use Contextual Routing
 
 # 프로젝트 특징
@@ -29,3 +29,18 @@
 
 - NextJS 스터디 / 실습
 - 인스타그램 스타일 모달 라우팅 구현
+
+# 로컬 실행
+
+```bash
+pnpm install
+pnpm dev
+```
+
+`http://localhost:3000/stores`에서 맛집 목록을 확인합니다. 개발과 배포 모두 저장소의 `db.json`을 사용하므로 별도 데이터 서버나 `DB_URL` 환경 변수가 필요하지 않습니다.
+
+# 배포
+
+Vercel에서 `pnpm build`로 맛집 목록과 상세 페이지를 정적으로 생성합니다. 맛집 정보를 바꾸려면 `db.json`을 수정한 뒤 다시 배포합니다.
+
+`pnpm db`는 JSON Server 학습용으로 남겨 둔 선택 명령이며, 사이트 실행에는 필요하지 않습니다.

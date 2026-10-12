@@ -1,13 +1,13 @@
 // noinspection JSIgnoredPromiseFromCall
 
 import { Modal } from 'antd';
-import { useRouter } from 'next/router';
-import ModalContent from '@/components/ModalContent';
-import { useEffect } from 'react';
-import { useMounted } from '@/hooks/useMount';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import ModalContent from '@/components/ModalContent';
+import db from '@/db.json';
 import useCurrentSize from '@/hooks/useCurrentSize';
-import { buildDbUrl } from '@/lib/db-url';
+import { useMounted } from '@/hooks/useMount';
 
 export default function StoreInfo({ store }) {
   const router = useRouter();
@@ -18,7 +18,7 @@ export default function StoreInfo({ store }) {
 
   useEffect(() => {
     router.prefetch('/stores'); // /stores 페이지 미리 로드
-  }, []);
+  }, [router.prefetch]);
 
   const isMobile = width <= 449;
   return (
@@ -47,26 +47,8 @@ export default function StoreInfo({ store }) {
 // Next.js는 몇개의 페이지를 생성해야 하는지, 어떤 페이지 id가 유효한지 알 수 없음
 // 따라서 getStaticPaths 를 통해 빌드 타임 때 정적으로 렌더링할 경로를 설정해줘야 함
 export async function getStaticPaths() {
-  let stores = [];
-  try {
-    const url = buildDbUrl('/stores');
-    const res = await fetch(url);
-    if (res.status !== 200) {
-      return {
-        paths: [],
-        fallback: false,
-      };
-    }
-    stores = await res.json();
-  } catch (_error) {
-    return {
-      paths: [],
-      fallback: false,
-    };
-  }
-
-  const storePaths = stores.map(({ id }) => ({
-    params: { storeId: String(id), asPath: '/stores' },
+  const storePaths = db.stores.map(({ id }) => ({
+    params: { storeId: String(id) },
   }));
 
   return {
@@ -81,27 +63,7 @@ export async function getStaticPaths() {
 // 반면 getServerSideProps(SSR) 는 페이지를 요청할 때마다 데이터 GET
 // reference via https://nextjs.org/learn/basics/data-fetching/two-forms
 export async function getStaticProps({ params: { storeId } }) {
-  let res;
-  try {
-    const url = buildDbUrl(`/stores/${storeId}`);
-    res = await fetch(url);
-  } catch (_error) {
-    return {
-      redirect: {
-        destination: '/about',
-      },
-    };
-  }
-
-  if (res.status !== 200) {
-    return {
-      redirect: {
-        destination: '/about', // data fetch 실패하면 리다이렉트
-      },
-    };
-  }
-
-  const store = await res.json();
+  const store = db.stores.find(({ id }) => String(id) === storeId);
 
   if (!store) {
     return {
